@@ -1,4 +1,4 @@
-#Example app using flask_restful
+# Example app using flask_restful
 
 This app implements a listing for products using flask_restful
 
