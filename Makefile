@@ -9,7 +9,7 @@ VERSION=latest
 PORT=5000
 
 ##@ Database preparation
-create-db:
+create-db: ## Creates the sqlite db with mocked data
 	rm -f mock.db
 	python load_mock_db.py
 
