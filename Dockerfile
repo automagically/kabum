@@ -3,8 +3,7 @@ RUN apt-get update; apt-get install sqlite3
 RUN mkdir /opt/kabum
 WORKDIR /opt/kabum
 COPY requirements.txt .
-COPY *.py ./
-COPY mock.db .
+COPY kabum/ ./kabum/
 COPY entry.sh .
 RUN pip install -r requirements.txt
 RUN pip install gunicorn

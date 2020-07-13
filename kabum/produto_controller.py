@@ -1,7 +1,7 @@
 from flask_restful import Resource
 
-from models import Produto as ProdutoModel
-from schemas import ProdutoSchema
+from .models import Produto as ProdutoModel
+from .schemas import ProdutoSchema
 
 class Produto(Resource):
 

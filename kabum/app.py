@@ -2,9 +2,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Api
 
-from models import db
-from schemas import ma
-from produto_controller import Produto
+from .models import db
+from .schemas import ma
+from .produto_controller import Produto
 
 
 app = Flask(__name__)

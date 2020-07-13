@@ -1,11 +1,12 @@
 from datetime import datetime
+import json
 
 from flask import Flask
 
-from models import *
+from kabum.models import *
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mock.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///kabum/mock.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.app = app
@@ -13,7 +14,7 @@ db.init_app(app)
 
 db.create_all()
 for filename in ['1.json','2.json','3.json']:
-    with open(filename, 'r') as f:
+    with open('data/' + filename, 'r') as f:
         raw = json.load(f)
 
         oferta = raw['oferta']

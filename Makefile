@@ -10,7 +10,7 @@ PORT=5000
 
 ##@ Database preparation
 create-db: ## Creates the sqlite db with mocked data
-	rm -f mock.db
+	rm -f kabum/mock.db
 	python load_mock_db.py
 
 ##@ Run with Python
@@ -20,7 +20,7 @@ dev-prep:  ## Install Python dependencies
 	pip install -r requirements.txt
 
 dev-run:  ## Start Flask backend server
-	FLASK_APP=app.py FLASK_ENV=developement FLASK_DEBUG=True flask run
+	FLASK_APP=kabum/app.py FLASK_ENV=developement FLASK_DEBUG=True flask run
 
 ##@ Run with Docker
 docker: create-db docker-build docker-run ## Build docker image and Run the container
